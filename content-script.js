@@ -22,7 +22,8 @@ class LocalizationAnalyzer {
       libretranslateUrl: 'http://localhost:5001',
       verificationApiKey: '',
       cacheTranslations: true,
-      verificationMode: 'all'
+      verificationMode: 'all',
+      verificationType: 'language-only' // Default to language detection only
     };
   }
 
@@ -39,6 +40,7 @@ class LocalizationAnalyzer {
       
       console.log('Current settings after merge:', this.settings);
       console.log('enableVerification:', this.settings.enableVerification);
+      console.log('verificationType:', this.settings.verificationType);
       console.log('LibreTranslateAPI available:', typeof LibreTranslateAPI !== 'undefined');
       
       // Initialize LibreTranslate API if verification is enabled
@@ -560,17 +562,30 @@ class LocalizationAnalyzer {
     console.log('Checking if verification should run...');
     console.log('  - this.translator:', !!this.translator);
     console.log('  - this.settings.enableVerification:', this.settings.enableVerification);
+    console.log('  - this.settings.verificationType:', this.settings.verificationType);
     
-    if (this.translator && this.settings.enableVerification) {
-      console.log('🔄 Starting translation verification...');
-      try {
-        await this.verifyTranslations();
-        console.log('✅ Verification complete:', this.results);
-      } catch (error) {
-        console.error('❌ Verification error:', error);
+    if (this.settings.enableVerification) {
+      if (this.settings.verificationType === 'language-only') {
+        console.log('🔄 Starting language-only verification...');
+        try {
+          await this.verifyLanguageOnly();
+          console.log('✅ Language verification complete:', this.results);
+        } catch (error) {
+          console.error('❌ Language verification error:', error);
+        }
+      } else if (this.translator) {
+        console.log('🔄 Starting translation verification...');
+        try {
+          await this.verifyTranslations();
+          console.log('✅ Translation verification complete:', this.results);
+        } catch (error) {
+          console.error('❌ Translation verification error:', error);
+        }
+      } else {
+        console.log('⏭️  Skipping verification - translator not available');
       }
     } else {
-      console.log('⏭️  Skipping verification');
+      console.log('⏭️  Skipping verification - disabled');
     }
     
     // Store results
@@ -613,12 +628,24 @@ class LocalizationAnalyzer {
     
     for (const finding of itemsToVerify) {
       try {
+        // Measure API call performance
+        const startTime = performance.now();
+        
         // Translate from English to target language
         const expectedTranslation = await this.translator.translate(
           finding.fullText,
           'en',
           targetLangCode
         );
+        
+        const endTime = performance.now();
+        const apiCallTime = endTime - startTime;
+        finding.apiCallTime = apiCallTime;
+        
+        // Log performance for first few calls
+        if (verifiedCount <= 5) {
+          console.log(`Translation API call time: ${apiCallTime.toFixed(2)}ms for text length: ${finding.fullText.length}`);
+        }
         
         verifiedCount++;
         
@@ -652,7 +679,160 @@ class LocalizationAnalyzer {
       }
     }
     
+    // Calculate performance metrics
+    const apiCallTimes = itemsToVerify
+      .filter(f => f.apiCallTime)
+      .map(f => f.apiCallTime);
+    
+    if (apiCallTimes.length > 0) {
+      const totalTime = apiCallTimes.reduce((sum, time) => sum + time, 0);
+      const avgTime = totalTime / apiCallTimes.length;
+      const minTime = Math.min(...apiCallTimes);
+      const maxTime = Math.max(...apiCallTimes);
+      
+      console.log(`Translation performance: Avg ${avgTime.toFixed(2)}ms, Min ${minTime.toFixed(2)}ms, Max ${maxTime.toFixed(2)}ms, Total ${totalTime.toFixed(2)}ms`);
+    }
+    
     console.log(`Verification complete: ${correctCount} correct, ${incorrectCount} incorrect out of ${verifiedCount} verified`);
+  }
+
+  /**
+   * Language-only verification - detects language using LibreTranslate API
+   */
+  async verifyLanguageOnly() {
+    // Get all items for language verification (not just localized ones)
+    let itemsToVerify = this.results.findings;
+    
+    // Sample mode: only verify a percentage
+    if (this.settings.verificationMode === 'sample') {
+      const sampleSize = Math.ceil(itemsToVerify.length * 0.2); // 20%
+      itemsToVerify = this.sampleRandomItems(itemsToVerify, sampleSize);
+      console.log(`Sample mode: Checking ${itemsToVerify.length} of ${this.results.findings.filter(f => f.status === 'localized').length} items`);
+    }
+    
+    if (itemsToVerify.length === 0) {
+      console.log('No items to verify');
+      return;
+    }
+    
+    // Check if LibreTranslate API is available
+    if (!this.translator) {
+      console.error('LibreTranslate API not available for language detection');
+      return;
+    }
+    
+    let verifiedCount = 0;
+    let correctCount = 0;
+    let incorrectCount = 0;
+    
+    // Initialize new counts
+    this.results.correctlyTranslatedCount = 0;
+    this.results.incorrectlyTranslatedCount = 0;
+    
+    const targetLangCode = this.translator.getLibreTranslateCode(this.settings.targetLanguage);
+    
+    for (const finding of itemsToVerify) {
+      try {
+        // Use LibreTranslate API to detect language
+        const endpoint = `${this.settings.libretranslateUrl}/detect`;
+        const body = {
+          q: finding.fullText
+        };
+        
+        if (this.settings.verificationApiKey) {
+          body.api_key = this.settings.verificationApiKey;
+        }
+        
+        // Measure API call performance
+        const startTime = performance.now();
+        
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(body)
+        });
+        
+        if (!response.ok) {
+          throw new Error(`LibreTranslate API error: ${response.status} ${response.statusText}`);
+        }
+        
+        const detectionResult = await response.json();
+        
+        const endTime = performance.now();
+        const apiCallTime = endTime - startTime;
+        finding.apiCallTime = apiCallTime;
+        
+        // Log performance for first few calls
+        if (verifiedCount <= 5) {
+          console.log(`Language detection API call time: ${apiCallTime.toFixed(2)}ms for text length: ${finding.fullText.length}`);
+        }
+        const detectedLang = detectionResult[0]?.language || 'und';
+        const confidence = detectionResult[0]?.confidence || 0;
+        
+        verifiedCount++;
+        
+        console.log(`Detected language: ${detectedLang} (${confidence.toFixed(2)}) for text: "${finding.text.substring(0, 30)}..."`);
+        
+        // Check if detected language matches target
+        if (detectedLang === targetLangCode) {
+          // Only update counts if this was previously marked as localized
+          if (finding.status === 'localized') {
+            this.results.localizedCount--;
+            this.results.correctlyTranslatedCount++;
+          } else if (finding.status === 'non-localized') {
+            this.results.nonLocalizedCount--;
+            this.results.correctlyTranslatedCount++;
+          }
+          
+          finding.status = 'correctly-translated';
+          finding.reason = `Language verified: Detected ${detectedLang} with ${(confidence * 100).toFixed(1)}% confidence`;
+          finding.detectedLanguage = detectedLang;
+          finding.confidence = confidence;
+          correctCount++;
+        } else {
+          // Only update counts if this was previously marked as localized
+          if (finding.status === 'localized') {
+            this.results.localizedCount--;
+            this.results.incorrectlyTranslatedCount++;
+          } else if (finding.status === 'non-localized') {
+            // This was correctly identified as non-localized
+            this.results.nonLocalizedCount--;
+            this.results.incorrectlyTranslatedCount++;
+          }
+          
+          finding.status = 'incorrectly-translated';
+          finding.reason = `Language mismatch: Detected ${detectedLang}, expected ${targetLangCode} (${(confidence * 100).toFixed(1)}% confidence)`;
+          finding.detectedLanguage = detectedLang;
+          finding.confidence = confidence;
+          incorrectCount++;
+        }
+        
+        // Small delay to avoid rate limiting
+        await this.sleep(100);
+        
+      } catch (error) {
+        console.error(`Language detection error for "${finding.text}":`, error);
+        finding.verificationError = error.message;
+      }
+    }
+    
+    // Calculate performance metrics
+    const apiCallTimes = itemsToVerify
+      .filter(f => f.apiCallTime)
+      .map(f => f.apiCallTime);
+    
+    if (apiCallTimes.length > 0) {
+      const totalTime = apiCallTimes.reduce((sum, time) => sum + time, 0);
+      const avgTime = totalTime / apiCallTimes.length;
+      const minTime = Math.min(...apiCallTimes);
+      const maxTime = Math.max(...apiCallTimes);
+      
+      console.log(`Language detection performance: Avg ${avgTime.toFixed(2)}ms, Min ${minTime.toFixed(2)}ms, Max ${maxTime.toFixed(2)}ms, Total ${totalTime.toFixed(2)}ms`);
+    }
+    
+    console.log(`Language verification complete: ${correctCount} correct, ${incorrectCount} incorrect out of ${verifiedCount} verified`);
   }
 
   /**

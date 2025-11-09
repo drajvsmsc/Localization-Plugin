@@ -320,8 +320,18 @@ function escapeHtml(text) {
  * Helper: Format status
  */
 function formatStatus(status) {
-  return status.split('-').map(word => 
-    word.charAt(0).toUpperCase() + word.slice(1)
-  ).join(' ');
+  // Map the status to the simplified categories
+  if (status === 'correctly-translated' || status === 'localized') {
+    return 'Localized';
+  } else if (status === 'incorrectly-translated' || status === 'non-localized') {
+    return 'Non-Localized';
+  } else if (status === 'proper-noun' || (typeof status === 'object' && status.contentType === 'proper-noun')) {
+    return 'Proper Noun';
+  } else {
+    // Fallback to original formatting
+    return status.split('-').map(word => 
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(' ');
+  }
 }
 

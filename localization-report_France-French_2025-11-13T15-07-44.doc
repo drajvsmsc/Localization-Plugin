@@ -1,0 +1,4623 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Localization Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    h1 { color: #667eea; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+    h2 { color: #495057; margin-top: 30px; }
+    .metadata { background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 20px 0; }
+    .metadata p { margin: 5px 0; }
+    .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0; }
+    .stat-card { background: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 4px solid #667eea; }
+    .stat-value { font-size: 24px; font-weight: bold; color: #212529; }
+    .stat-label { color: #6c757d; font-size: 14px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th { background: #667eea; color: white; padding: 12px; text-align: left; }
+    td { padding: 10px; border-bottom: 1px solid #dee2e6; }
+    tr:hover { background: #f8f9fa; }
+    .non-localized { color: #dc3545; font-weight: bold; }
+    .localized { color: #28a745; font-weight: bold; }
+    .excluded { color: #ffc107; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>LocalizationChecker Report</h1>
+  
+  <div class="metadata">
+    <p><strong>URL:</strong> https://www.pega.com/fr/blueprint?gad_campaignid=19608901658&gad_source=1&gbraid=0AAAAAD_i2S071bDv6QoFhTp_S1Fm_Nz2C&gclid=CjwKCAiA_dDIBhB6EiwAvzc1cKJ9X13Dq8A_mU29_rIUuTYioSuq-OvWvf9fnZa3mT237Qp-SDNeshoCnn4QAvD_BwE&gclsrc=aw.ds&gloc=9184631&utm_campaign=G_India_Brand_IA_Exact_%28CPN-111059%29_EN&utm_content=pcrid%7C695061495732%7Cpkw%7Caud-2272071310306%3Akwd-2290932736270%7Cpmt%7Ce%7Cpdv%7Cc%7C&utm_medium=cpc&utm_source=google&utm_term=pega%20blueprint</p>
+    <p><strong>Region:</strong> France</p>
+    <p><strong>Language:</strong> French</p>
+    <p><strong>Date:</strong> 11/13/2025, 8:37:44 PM</p>
+  </div>
+  
+  <h2>Executive Summary</h2>
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-label">Total Elements</div>
+      <div class="stat-value">568</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Localized</div>
+      <div class="stat-value">0</div>
+      <div class="stat-label">0%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Non-Localized</div>
+      <div class="stat-value">456</div>
+      <div class="stat-label">80%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Excluded</div>
+      <div class="stat-value">15</div>
+      <div class="stat-label">3%</div>
+    </div>
+  </div>
+  
+  <h2>Detailed Findings</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Status</th>
+        <th>Text</th>
+        <th>Element</th>
+        <th>Location</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Passer directement au contenu principal</td>
+        <td>&lt;a&gt;</td>
+        <td>Body</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Toggle Search Panel</td>
+        <td>&lt;span&gt;</td>
+        <td>Header</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Toggle Main Site Navigation</td>
+        <td>&lt;span&gt;</td>
+        <td>Header</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Plateforme</td>
+        <td>&lt;span&gt;</td>
+        <td>Header</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Solutions</td>
+        <td>&lt;span&gt;</td>
+        <td>Header</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Clients</td>
+        <td>&lt;span&gt;</td>
+        <td>Header</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Explorer</td>
+        <td>&lt;span&gt;</td>
+        <td>Header</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Services et Partenaires</td>
+        <td>&lt;span&gt;</td>
+        <td>Header</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Événements</td>
+        <td>&lt;span&gt;</td>
+        <td>Header</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>À propos de</td>
+        <td>&lt;span&gt;</td>
+        <td>Header</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Sites Pega</td>
+        <td>&lt;span&gt;</td>
+        <td>Header</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Se connecter</td>
+        <td>&lt;span&gt;</td>
+        <td>Header</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Notifications</td>
+        <td>&lt;span&gt;</td>
+        <td>Header</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Bonjour Fgtyum</td>
+        <td>&lt;span&gt;</td>
+        <td>Header</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>User settings</td>
+        <td>&lt;span&gt;</td>
+        <td>Header</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Langue</td>
+        <td>&lt;span&gt;</td>
+        <td>Header</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Contact</td>
+        <td>&lt;span&gt;</td>
+        <td>Header</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Visite guidée</td>
+        <td>&lt;a&gt;</td>
+        <td>Header</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>We'd prefer it if you saw us at our best.</td>
+        <td>&lt;h2&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Pega.com is not optimized for Internet Explorer. For the optimal experience, please use:</td>
+        <td>&lt;p&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Google Chrome</td>
+        <td>&lt;a&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Mozilla Firefox</td>
+        <td>&lt;a&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Microsoft Edge</td>
+        <td>&lt;a&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Close Deprecation Notice</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Close Deprecation Notice</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Désormais disponible pour les responsables Marketing et Data Analysts&nbsp;: Pega Customer Engagement Blueprint&nbsp;! Donnez vie à votre stratégie marketing en temps réel.</td>
+        <td>&lt;a&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Conception de workflow collaborative, dopée à l'IA</td>
+        <td>&lt;p&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Pega Blueprint™</td>
+        <td>&lt;h1&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Transformez instantanément une idée en application, grâce à la puissance de Pega GenAI™.</td>
+        <td>&lt;div&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Créez un Blueprint</td>
+        <td>&lt;a&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>L’accélérateur dont votre transformation a besoin</td>
+        <td>&lt;h2&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Fini les projets de plusieurs années&nbsp;! Quelques minutes suffisent pour passer en production. Evitez le travail fastidieux en amont. Les équipes Business, IT et IA peuvent collaborer directement à la c</td>
+        <td>&lt;p&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Regarder la vidéo de démo</td>
+        <td>&lt;button&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Sécurité dès la conception</td>
+        <td>&lt;h2&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Pega Blueprint garantit le chiffrement et la confidentialité des données de vos Blueprints. Nous n’utiliserons jamais vos données pour entraîner l'IA. Nos fonctions de sécurité et d’authentification u</td>
+        <td>&lt;p&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Découvrez nos mesures de protection détaillées</td>
+        <td>&lt;a&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Boostez votre entreprise</td>
+        <td>&lt;h2&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Evitez un long processus de collecte des exigences</td>
+        <td>&lt;h3&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Définissez votre problématique actuelle puis laissez l’IA utiliser les bonnes pratiques du secteur pour créer le point de départ optimal qui servira aux équipes Business et IT.</td>
+        <td>&lt;p&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Passez en production deux fois plus vite</td>
+        <td>&lt;h3&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Convertissez votre Blueprint en application Pega Platform™ en quelques secondes seulement, pour obtenir instantanément un prototype de votre vision et ainsi accélérer le développement.</td>
+        <td>&lt;p&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Repensez et supprimez votre dette technique</td>
+        <td>&lt;h3&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Importez la documentation de vos processus existants dans Blueprint pour transformer instantanément des systèmes vieillissants en applications de workflow modernes et</td>
+        <td>&lt;p&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>cloud-ready</td>
+        <td>&lt;i&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Faites le test</td>
+        <td>&lt;a&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Pas de sprint sans Blueprint</td>
+        <td>&lt;h2&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Des workflows budgétaires à l'optimisation de la radio, Vodafone utilise Pega Blueprint pour accélérer sa modernisation. Résultat&nbsp;: des idées traduites en applications fonctionnelles en moins de 40 he</td>
+        <td>&lt;p&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Video duration:</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="excluded">⊘ Excluded</td>
+        <td>03:02</td>
+        <td>&lt;div&gt;</td>
+        <td>Main Content</td>
+        <td>Numeric or special characters (no localization needed)</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Captions available</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Captions available</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Video duration:</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="excluded">⊘ Excluded</td>
+        <td>04:04</td>
+        <td>&lt;div&gt;</td>
+        <td>Main Content</td>
+        <td>Numeric or special characters (no localization needed)</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Captions available</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Captions available</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Accélérez la transformation de l’existant</td>
+        <td>&lt;h2&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Utilisez l'IA pour analyser toute la documentation de vos applications existantes (vidéos, captures d'écran, dossiers d'analyse du code source, etc.), afin de générer instantanément de nouvelles appli</td>
+        <td>&lt;p&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>L’expertise collective à portée de main</td>
+        <td>&lt;h2&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Découvrez comment l'écosystème de partenaires de Pega utilise Pega Blueprint pour transformer leur expertise de pointe en solutions révolutionnaires.</td>
+        <td>&lt;p&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Découvrir les solutions</td>
+        <td>&lt;a&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Comment ça marche</td>
+        <td>&lt;p&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>5 étapes simples pour passer en production</td>
+        <td>&lt;h2&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Générez la conception complète d’une application en seulement quelques minutes. Voici comment&nbsp;:</td>
+        <td>&lt;h2&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>1. Décrivez votre problème métier et ajoutez les connaissances existantes. 2. Personnalisez les cycles de vie des workflows générés par l'IA. 3. Concevez les données et les personas pour chaque workfl</td>
+        <td>&lt;p&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Voir la solution en action</td>
+        <td>&lt;button&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Lire la vidéo</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Pause</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Son activé</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Temps actuel</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="excluded">⊘ Excluded</td>
+        <td>0:06</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Numeric or special characters (no localization needed)</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Durée</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="excluded">⊘ Excluded</td>
+        <td>0:33</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Numeric or special characters (no localization needed)</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Chargé</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="excluded">⊘ Excluded</td>
+        <td>100.00%</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Numeric or special characters (no localization needed)</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Type de flux</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>EN DIRECT</td>
+        <td>&lt;div&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Seek to live, currently behind live</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>EN DIRECT</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Temps restant</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="excluded">⊘ Excluded</td>
+        <td>0:27</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Numeric or special characters (no localization needed)</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>1x</td>
+        <td>&lt;div&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Vitesse de lecture</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>2x</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>1.5x</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>1.25x</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>1x</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>, sélectionné</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>0.75x</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Chapitres</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Chapitres</td>
+        <td>&lt;li&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Descriptions</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>descriptions désactivées</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>, sélectionné</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Sous-titres</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Paramètres des sous-titres</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>, ouvrir les paramètres des sous-titres</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Sous-titres désactivés</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>, sélectionné</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Quality Levels</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>1080p</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>1080p</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>HD</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>720p</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>720p</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>HD</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>540p</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>540p</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>360p</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>360p</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>270p</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>270p</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Auto</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>A, selected</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Piste audio</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>default</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>, sélectionné</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Plein écran</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>This is a modal window.</td>
+        <td>&lt;p&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Début de la fenêtre de dialogue. La touche d'échappement annulera et fermera la fenêtre.</td>
+        <td>&lt;p&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Texte</td>
+        <td>&lt;legend&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Color</td>
+        <td>&lt;label&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Blanc</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Noir</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Rouge</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Vert</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Bleu</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Jaune</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Magenta</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Cyan</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Transparency</td>
+        <td>&lt;label&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Opaque</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Semi-transparent</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Arrière-plan</td>
+        <td>&lt;legend&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Color</td>
+        <td>&lt;label&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Noir</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Blanc</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Rouge</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Vert</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Bleu</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Jaune</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Magenta</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Cyan</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Transparency</td>
+        <td>&lt;label&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Opaque</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Semi-transparent</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Transparent</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Fenêtre</td>
+        <td>&lt;legend&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Color</td>
+        <td>&lt;label&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Noir</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Blanc</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Rouge</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Vert</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Bleu</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Jaune</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Magenta</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Cyan</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Transparency</td>
+        <td>&lt;label&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Transparent</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Semi-transparent</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Opaque</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Taille des caractères</td>
+        <td>&lt;legend&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="excluded">⊘ Excluded</td>
+        <td>50%</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Numeric or special characters (no localization needed)</td>
+      </tr>
+
+      <tr>
+        <td class="excluded">⊘ Excluded</td>
+        <td>75%</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Numeric or special characters (no localization needed)</td>
+      </tr>
+
+      <tr>
+        <td class="excluded">⊘ Excluded</td>
+        <td>100%</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Numeric or special characters (no localization needed)</td>
+      </tr>
+
+      <tr>
+        <td class="excluded">⊘ Excluded</td>
+        <td>125%</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Numeric or special characters (no localization needed)</td>
+      </tr>
+
+      <tr>
+        <td class="excluded">⊘ Excluded</td>
+        <td>150%</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Numeric or special characters (no localization needed)</td>
+      </tr>
+
+      <tr>
+        <td class="excluded">⊘ Excluded</td>
+        <td>175%</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Numeric or special characters (no localization needed)</td>
+      </tr>
+
+      <tr>
+        <td class="excluded">⊘ Excluded</td>
+        <td>200%</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Numeric or special characters (no localization needed)</td>
+      </tr>
+
+      <tr>
+        <td class="excluded">⊘ Excluded</td>
+        <td>300%</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Numeric or special characters (no localization needed)</td>
+      </tr>
+
+      <tr>
+        <td class="excluded">⊘ Excluded</td>
+        <td>400%</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Numeric or special characters (no localization needed)</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Style des contours du texte</td>
+        <td>&lt;legend&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Aucun</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Élevé</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Enfoncé</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Uniforme</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Ombre portée</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Famille de polices</td>
+        <td>&lt;legend&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Polices à chasse variable sans empattement (Proportional Sans-Serif)</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Polices à chasse fixe sans empattement (Monospace Sans-Serif)</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Polices à chasse variable avec empattement (Proportional Serif)</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Polices à chasse fixe avec empattement (Monospace Serif)</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Manuscrite</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Scripte</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Petites capitales</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Réinitialiser</td>
+        <td>&lt;button&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Restaurer tous les paramètres aux valeurs par défaut</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Terminé</td>
+        <td>&lt;button&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Fermer la boîte de dialogue modale</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Fin de la fenêtre de dialogue.</td>
+        <td>&lt;p&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Fermer la boîte de dialogue modale</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>This is a modal window. Ce modal peut être fermé en appuyant sur la touche Échap ou activer le bouton de fermeture.</td>
+        <td>&lt;p&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Découvrez les améliorations de Blueprint</td>
+        <td>&lt;h2&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Consultez les nouveautés relatives à Blueprint, accédez à la documentation et demandez de l’aide.</td>
+        <td>&lt;p&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Rejoignez la communauté</td>
+        <td>&lt;a&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Recevez les dernières actualités de Blueprint directement par e-mail</td>
+        <td>&lt;div&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Adresse e-mail professionnelle</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>-- Sélectionner --</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Afghanistan</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Albania</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Algeria</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>American Samoa</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Andorra</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Angola</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Anguilla</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Antarctica</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Antigua &amp; Barbuda</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Argentina</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Armenia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Aruba</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Ascension Island</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Australia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Austria</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Azerbaijan</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Bahamas</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Bahrain</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Bangladesh</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Barbados</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Belarus</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Belgium</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Belize</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Benin</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Bermuda</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Bhutan</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Bolivia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Bosnia &amp; Herzegovina</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Botswana</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Bouvet Island</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Brazil</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>British Indian Ocean Territory</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>British Virgin Islands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Brunei</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Bulgaria</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Burkina Faso</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Burundi</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Cambodia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Cameroon</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Canada</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Canary Islands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Cape Verde</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Caribbean Netherlands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Cayman Islands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Central African Republic</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Ceuta &amp; Melilla</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Chad</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Chile</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>China</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Christmas Island</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Clipperton Island</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Cocos (Keeling) Islands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Colombia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Comoros</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Congo - Brazzaville</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Congo - Kinshasa</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Cook Islands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Costa Rica</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Croatia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Cuba</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Curaçao</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Cyprus</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Czechia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Côte d’Ivoire</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Denmark</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Diego Garcia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Djibouti</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Dominica</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Dominican Republic</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Ecuador</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Egypt</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>El Salvador</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Equatorial Guinea</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Eritrea</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Estonia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Eswatini</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Ethiopia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Falkland Islands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Faroe Islands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Fiji</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Finland</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>France</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>French Guiana</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>French Polynesia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>French Southern Territories</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Gabon</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Gambia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Georgia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Germany</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Ghana</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Gibraltar</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Greece</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Greenland</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Grenada</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Guadeloupe</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Guam</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Guatemala</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Guernsey</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Guinea</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Guinea-Bissau</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Guyana</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Haiti</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Heard &amp; McDonald Islands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Honduras</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Hong Kong SAR China</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Hungary</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Iceland</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>India</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Indonesia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Iran</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Iraq</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Ireland</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Isle of Man</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Israel</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Italy</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Jamaica</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Japan</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Jersey</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Jordan</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Kazakhstan</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Kenya</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Kiribati</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Kosovo</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Kuwait</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Kyrgyzstan</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Laos</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Latvia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Lebanon</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Lesotho</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Liberia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Libya</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Liechtenstein</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Lithuania</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Luxembourg</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Macao SAR China</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Madagascar</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Malawi</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Malaysia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Maldives</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Mali</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Malta</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Marshall Islands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Martinique</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Mauritania</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Mauritius</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Mayotte</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Mexico</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Micronesia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Moldova</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Monaco</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Mongolia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Montenegro</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Montserrat</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Morocco</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Mozambique</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Myanmar (Burma)</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Namibia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Nauru</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Nepal</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Netherlands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Netherlands Antilles</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>New Caledonia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>New Zealand</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Nicaragua</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Niger</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Nigeria</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Niue</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Norfolk Island</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Northern Mariana Islands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>North Korea</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>North Macedonia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Norway</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Oman</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Outlying Oceania</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Pakistan</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Palau</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Palestinian Territories</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Panama</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Papua New Guinea</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Paraguay</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Peru</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Philippines</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Pitcairn Islands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Poland</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Portugal</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Puerto Rico</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Qatar</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Romania</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Russia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Rwanda</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Réunion</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Samoa</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>San Marino</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Sark</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Saudi Arabia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Senegal</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Serbia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Seychelles</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Sierra Leone</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Singapore</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Sint Maarten</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Slovakia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Slovenia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Solomon Islands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Somalia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>South Africa</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>South Georgia &amp; South Sandwich Islands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>South Korea</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>South Sudan</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Spain</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Sri Lanka</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>St. Barthélemy</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>St. Helena</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>St. Kitts &amp; Nevis</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>St. Lucia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>St. Martin</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>St. Pierre &amp; Miquelon</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>St. Vincent &amp; Grenadines</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Sudan</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Suriname</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Svalbard &amp; Jan Mayen</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Sweden</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Switzerland</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Syria</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>São Tomé &amp; Príncipe</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Taiwan</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Tajikistan</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Tanzania</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Thailand</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Timor-Leste</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Togo</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Tokelau</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Tonga</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Trinidad &amp; Tobago</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Tristan da Cunha</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Tunisia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Turkmenistan</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Turks &amp; Caicos Islands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Tuvalu</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Türkiye</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>U.S. Outlying Islands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>U.S. Virgin Islands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Uganda</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Ukraine</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>United Arab Emirates</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>United Kingdom</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>United States</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Uruguay</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Uzbekistan</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Vanuatu</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Vatican City</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Venezuela</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Vietnam</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Wallis &amp; Futuna</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Western Sahara</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Yemen</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Zambia</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Zimbabwe</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Åland Islands</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Pays</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>- Select your State -</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>AL</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>AK</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>AZ</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>AR</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>CA</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>CO</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>CT</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>DE</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>FL</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>GA</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>HI</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>ID</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>IL</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>IN</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>IA</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>KS</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>KY</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>LA</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>ME</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>MD</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>MA</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>MI</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>MN</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>MS</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>MO</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>MT</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>NE</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>NV</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>NH</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>NJ</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>NM</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>NY</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>NC</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>ND</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>OH</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>OK</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>OR</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>PA</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>RI</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>SC</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>SD</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>TN</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>TX</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>UT</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>VT</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>VA</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>WA</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>WV</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>WI</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>WY</td>
+        <td>&lt;option&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>State</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Refuser</td>
+        <td>&lt;h2&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Recevez des e-mails occasionnels à propos de rapports d'analyse, d’événements Pega et d’autres actualités importantes. Vous pouvez vous désabonner à tout moment.</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Recevoir les actualités</td>
+        <td>&lt;button&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Un instant...</td>
+        <td>&lt;p&gt;</td>
+        <td>Main Content</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Leave this field blank</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Partager cette page</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Partager via Facebook</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Partager via X</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Partager via LinkedIn</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Partager par e-mail</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Copier le lien</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Copying...</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Copied!</td>
+        <td>&lt;span&gt;</td>
+        <td>Main Content</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>À propos de Pega</td>
+        <td>&lt;h2&gt;</td>
+        <td>Footer</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Pega offre la plateforme basée sur l’IA leader pour accompagner la transformation des entreprises. Les organisations les plus influentes au monde font confiance à notre technologie pour repenser leur </td>
+        <td>&lt;p&gt;</td>
+        <td>Footer</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Suivez-nous !</td>
+        <td>&lt;h3&gt;</td>
+        <td>Footer</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>X (Twitter)</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Facebook</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Linkedin</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Youtube</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Ressources</td>
+        <td>&lt;h3&gt;</td>
+        <td>Footer</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Analystes</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Vidéos de démonstration produit</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Essai de la Plateforme Pega</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Partenaires et services de conseil</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Centre de confiance</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Sujets Tech</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Sites Pega</td>
+        <td>&lt;h3&gt;</td>
+        <td>Footer</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Community</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Support</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Formations Pega Academy</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Conception des produits Pega</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Partenaires</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Conférence PegaWorld</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Pega Blog</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>MyPega</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Société</td>
+        <td>&lt;h3&gt;</td>
+        <td>Footer</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>À propos de Pegasystems</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Nos bureaux</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Carrières</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Contactez-nous</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>US: 1-888-PEGA-NOW</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>AU: 1800 763 425</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Langages</td>
+        <td>&lt;h3&gt;</td>
+        <td>Footer</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>English</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Français</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Deutsch</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Italiano</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>日本語</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Português</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Español</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Juridique</td>
+        <td>&lt;h3&gt;</td>
+        <td>Footer</td>
+        <td>English common nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Conditions d'utilisation</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Accessibilité</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Marques</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>English proper nouns need localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Confidentialité</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>Vos paramètres de confidentialité</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+      <tr>
+        <td class="non-localized">✗ Non Localized</td>
+        <td>Gestion des cookies</td>
+        <td>&lt;a&gt;</td>
+        <td>Footer</td>
+        <td>English text needs localization</td>
+      </tr>
+
+      <tr>
+        <td class="incorrectly-translated">undefined Incorrectly Translated</td>
+        <td>©2025 Pegasystems Inc.</td>
+        <td>&lt;span&gt;</td>
+        <td>Footer</td>
+        <td>Language mismatch: Detected und, expected fra</td>
+      </tr>
+
+    </tbody>
+  </table>
+  
+  <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #dee2e6; color: #6c757d; font-size: 12px;">
+    <p>Generated by LocalizationChecker v1.0.0</p>
+  </div>
+</body>
+</html>

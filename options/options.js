@@ -64,7 +64,8 @@ function getDefaultSettings() {
     libretranslateUrl: 'http://localhost:5001',
     verificationApiKey: '',
     cacheTranslations: true,
-    verificationMode: 'all'  // Full mode by default
+    verificationMode: 'all',  // Full mode by default
+    verificationType: 'language-only'  // Language detection only by default
   };
 }
 
@@ -327,7 +328,8 @@ async function saveSettings() {
       libretranslateUrl: document.getElementById('libretranslate-url').value,
       verificationApiKey: document.getElementById('verification-api-key').value,
       cacheTranslations: document.getElementById('cache-translations').checked,
-      verificationMode: document.getElementById('verification-mode').value
+      verificationMode: document.getElementById('verification-mode').value,
+      verificationType: document.getElementById('verification-type').value
     };
     
     // Combine words and patterns into customExclusions

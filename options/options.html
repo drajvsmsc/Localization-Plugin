@@ -163,6 +163,18 @@
           </div>
 
           <div class="form-group">
+            <label>Verification Type</label>
+            <select id="verification-type" class="form-control">
+              <option value="language-only" selected>Language Detection Only - Uses LibreTranslate API</option>
+              <option value="translation">Full Translation Verification - Uses LibreTranslate API</option>
+            </select>
+            <p class="help-text">
+              <strong>Language Detection Only:</strong> Uses LibreTranslate API to detect language with higher accuracy<br>
+              <strong>Full Translation:</strong> Translates text and compares with expected translation
+            </p>
+          </div>
+
+          <div class="form-group">
             <label>Verification Mode</label>
             <select id="verification-mode" class="form-control">
               <option value="sample">Sample Mode - Verify random 20% (faster, less API calls)</option>

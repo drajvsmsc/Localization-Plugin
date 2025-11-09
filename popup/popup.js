@@ -198,45 +198,28 @@ function displayResults(results) {
   
   // Update summary statistics
   document.getElementById('total-elements').textContent = results.totalElements;
-  document.getElementById('localized-count').textContent = results.localizedCount;
-  document.getElementById('non-localized-count').textContent = results.nonLocalizedCount;
-  document.getElementById('excluded-count').textContent = results.excludedCount || 0;
   
-  // Show/hide verification stats if present
-  if (results.correctlyTranslatedCount > 0 || results.incorrectlyTranslatedCount > 0) {
-    document.getElementById('correctly-translated-card').style.display = 'block';
-    document.getElementById('incorrectly-translated-card').style.display = 'block';
-    document.getElementById('correctly-translated-count').textContent = results.correctlyTranslatedCount || 0;
-    document.getElementById('incorrectly-translated-count').textContent = results.incorrectlyTranslatedCount || 0;
-    
-    const correctlyPct = Math.round(((results.correctlyTranslatedCount || 0) / (results.totalElements || 1)) * 100);
-    const incorrectlyPct = Math.round(((results.incorrectlyTranslatedCount || 0) / (results.totalElements || 1)) * 100);
-    document.getElementById('correctly-translated-percentage').textContent = `${correctlyPct}%`;
-    document.getElementById('incorrectly-translated-percentage').textContent = `${incorrectlyPct}%`;
-  } else {
-    document.getElementById('correctly-translated-card').style.display = 'none';
-    document.getElementById('incorrectly-translated-card').style.display = 'none';
-  }
+  // Count localized items (correctly translated + localized)
+  const localizedCount = (results.correctlyTranslatedCount || 0) + (results.localizedCount || 0);
+  document.getElementById('localized-count').textContent = localizedCount;
+  
+  // Non-localized count (non-localized + incorrectly-translated)
+  const nonLocalizedCount = (results.nonLocalizedCount || 0) + (results.incorrectlyTranslatedCount || 0);
+  document.getElementById('non-localized-count').textContent = nonLocalizedCount;
   
   // Calculate percentages
   const total = results.totalElements || 1;
-  const localizedPct = Math.round((results.localizedCount / total) * 100);
-  const nonLocalizedPct = Math.round((results.nonLocalizedCount / total) * 100);
-  const excludedPct = Math.round(((results.excludedCount || 0) / total) * 100);
+  const localizedPct = Math.round((localizedCount / total) * 100);
+  const nonLocalizedPct = Math.round((nonLocalizedCount / total) * 100);
   
   document.getElementById('localized-percentage').textContent = `${localizedPct}%`;
   document.getElementById('non-localized-percentage').textContent = `${nonLocalizedPct}%`;
-  document.getElementById('excluded-percentage').textContent = `${excludedPct}%`;
   
-  // Calculate content type breakdown for non-localized items
-  const nonLocalizedFindings = results.findings.filter(f => f.status === 'non-localized');
-  const properNounCount = nonLocalizedFindings.filter(f => f.contentType === 'proper-noun').length;
-  const commonNounCount = nonLocalizedFindings.filter(f => f.contentType === 'common-noun').length;
-  const regularTextCount = nonLocalizedFindings.filter(f => !f.contentType || f.contentType === 'text').length;
-  
-  document.getElementById('proper-noun-breakdown').textContent = properNounCount;
-  document.getElementById('common-noun-breakdown').textContent = commonNounCount;
-  document.getElementById('regular-text-breakdown').textContent = regularTextCount;
+  // Calculate proper noun count (from all findings)
+  const properNounCount = results.findings.filter(f => f.contentType === 'proper-noun').length;
+  document.getElementById('proper-noun-count').textContent = properNounCount;
+  const properNounPct = Math.round((properNounCount / total) * 100);
+  document.getElementById('proper-noun-percentage').textContent = `${properNounPct}%`;
   
   // Display findings
   filteredFindings = results.findings || [];
@@ -255,8 +238,26 @@ function filterFindings() {
   
   filteredFindings = currentResults.findings.filter(finding => {
     // Apply status filter
-    if (filterType !== 'all' && finding.status !== filterType) {
-      return false;
+    if (filterType === 'localized') {
+      // Include both 'localized' and 'correctly-translated' statuses
+      if (finding.status !== 'localized' && finding.status !== 'correctly-translated') {
+        return false;
+      }
+    } else if (filterType === 'non-localized') {
+      // Include both 'non-localized' and 'incorrectly-translated' statuses
+      if (finding.status !== 'non-localized' && finding.status !== 'incorrectly-translated') {
+        return false;
+      }
+    } else if (filterType === 'proper-noun') {
+      // Filter by proper noun content type
+      if (finding.contentType !== 'proper-noun') {
+        return false;
+      }
+    } else if (filterType !== 'all') {
+      // For backward compatibility
+      if (finding.status !== filterType) {
+        return false;
+      }
     }
     
     // Apply content type filter
@@ -318,13 +319,19 @@ function createFindingElement(finding) {
   const div = document.createElement('div');
   div.className = `finding-item ${finding.status}`;
   
-  const statusIcon = {
-    'correctly-translated': '✓✓',
-    'incorrectly-translated': '⚠️',
-    'localized': '✓',
-    'non-localized': '✗',
-    'excluded': '⊘'
-  }[finding.status] || '•';
+  // Simplified status icons
+  let statusIcon;
+  if (finding.status === 'correctly-translated' || finding.status === 'localized') {
+    statusIcon = '✓'; // Localized
+  } else if (finding.status === 'incorrectly-translated' || finding.status === 'non-localized') {
+    statusIcon = '✗'; // Non-Localized
+  } else if (finding.contentType === 'proper-noun') {
+    statusIcon = '🔤'; // Proper Noun
+  } else if (finding.status === 'excluded') {
+    statusIcon = '⊗'; // Excluded
+  } else {
+    statusIcon = '•'; // Default
+  }
   
   const contentTypeBadge = {
     'proper-noun': '<span class="content-type-badge proper-noun-badge">Proper Noun</span>',
@@ -355,9 +362,19 @@ function createFindingElement(finding) {
  * Format status text
  */
 function formatStatus(status) {
-  return status.split('-').map(word => 
-    word.charAt(0).toUpperCase() + word.slice(1)
-  ).join(' ');
+  // Map the status to the simplified categories
+  if (status === 'correctly-translated' || status === 'localized') {
+    return 'Localized';
+  } else if (status === 'incorrectly-translated' || status === 'non-localized') {
+    return 'Non-Localized';
+  } else if (status === 'proper-noun' || (typeof status === 'object' && status.contentType === 'proper-noun')) {
+    return 'Proper Noun';
+  } else {
+    // Fallback to original formatting
+    return status.split('-').map(word => 
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(' ');
+  }
 }
 
 /**

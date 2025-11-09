@@ -52,16 +52,6 @@
           <div class="stat-label">Total Elements</div>
           <div class="stat-value" id="total-elements">0</div>
         </div>
-        <div class="stat-card stat-verified" id="correctly-translated-card" style="display: none;">
-          <div class="stat-label">✓✓ Correctly Translated</div>
-          <div class="stat-value" id="correctly-translated-count">0</div>
-          <div class="stat-percentage" id="correctly-translated-percentage">0%</div>
-        </div>
-        <div class="stat-card stat-incorrect" id="incorrectly-translated-card" style="display: none;">
-          <div class="stat-label">⚠️ Incorrectly Translated</div>
-          <div class="stat-value" id="incorrectly-translated-count">0</div>
-          <div class="stat-percentage" id="incorrectly-translated-percentage">0%</div>
-        </div>
         <div class="stat-card stat-success">
           <div class="stat-label">✓ Localized</div>
           <div class="stat-value" id="localized-count">0</div>
@@ -72,28 +62,10 @@
           <div class="stat-value" id="non-localized-count">0</div>
           <div class="stat-percentage" id="non-localized-percentage">0%</div>
         </div>
-        <div class="stat-card stat-excluded">
-          <div class="stat-label">⊗ Excluded</div>
-          <div class="stat-value" id="excluded-count">0</div>
-          <div class="stat-percentage" id="excluded-percentage">0%</div>
-        </div>
-      </div>
-      
-      <div class="content-type-breakdown">
-        <h3>Content Type Breakdown (Non-Localized)</h3>
-        <div class="breakdown-grid">
-          <div class="breakdown-item">
-            <span class="breakdown-label">Proper Nouns:</span>
-            <span class="breakdown-value" id="proper-noun-breakdown">0</span>
-          </div>
-          <div class="breakdown-item">
-            <span class="breakdown-label">Common Nouns:</span>
-            <span class="breakdown-value" id="common-noun-breakdown">0</span>
-          </div>
-          <div class="breakdown-item">
-            <span class="breakdown-label">Regular Text:</span>
-            <span class="breakdown-value" id="regular-text-breakdown">0</span>
-          </div>
+        <div class="stat-card stat-proper-noun">
+          <div class="stat-label">🔤 Proper Nouns</div>
+          <div class="stat-value" id="proper-noun-count">0</div>
+          <div class="stat-percentage" id="proper-noun-percentage">0%</div>
         </div>
       </div>
     </section>
@@ -106,17 +78,13 @@
           <input type="text" id="search-input" class="search-input" placeholder="Search findings...">
           <select id="filter-select" class="filter-select">
             <option value="all">All</option>
-            <option value="incorrectly-translated">Incorrectly Translated</option>
-            <option value="non-localized">Non-Localized</option>
-            <option value="correctly-translated">Correctly Translated</option>
             <option value="localized">Localized</option>
-            <option value="excluded">Excluded</option>
+            <option value="non-localized">Non-Localized</option>
+            <option value="proper-noun">Proper Nouns</option>
           </select>
           <select id="content-type-filter" class="filter-select">
             <option value="all">All Types</option>
             <option value="proper-noun">Proper Nouns</option>
-            <option value="common-noun">Common Nouns</option>
-            <option value="text">Regular Text</option>
           </select>
         </div>
       </div>
