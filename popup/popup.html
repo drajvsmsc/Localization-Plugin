@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocalizationChecker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>LocalizationChecker</h1>
+      <div id="current-url" class="url">Loading...</div>
+    </header>
+
+    <!-- Configuration Panel -->
+    <section class="config-panel">
+      <div class="form-group">
+        <label for="region-select">Target Region:</label>
+        <select id="region-select" class="form-control">
+          <option value="India">India</option>
+          <option value="France">France</option>
+          <option value="Spain">Spain</option>
+          <option value="Germany">Germany</option>
+          <option value="Japan">Japan</option>
+          <option value="China">China</option>
+          <option value="Mexico">Mexico</option>
+          <option value="Brazil">Brazil</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="language-select">Target Language:</label>
+        <select id="language-select" class="form-control">
+          <option value="Hindi">Hindi</option>
+        </select>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <label>
+          <input type="checkbox" id="exclude-common-nouns">
+          Exclude Common Nouns
+        </label>
+      </div>
+
+      <div class="button-group">
+        <button id="analyze-btn" class="btn btn-primary">Analyze</button>
+        <button id="clear-btn" class="btn btn-secondary">Clear Results</button>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="summary" id="summary-section" style="display: none;">
+      <h2>Summary</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Total Elements</div>
+          <div class="stat-value" id="total-elements">0</div>
+        </div>
+        <div class="stat-card stat-success">
+          <div class="stat-label">✓ Localized</div>
+          <div class="stat-value" id="localized-count">0</div>
+          <div class="stat-percentage" id="localized-percentage">0%</div>
+        </div>
+        <div class="stat-card stat-danger">
+          <div class="stat-label">✗ Non-Localized</div>
+          <div class="stat-value" id="non-localized-count">0</div>
+          <div class="stat-percentage" id="non-localized-percentage">0%</div>
+        </div>
+        <div class="stat-card stat-excluded">
+          <div class="stat-label">⊗ Excluded</div>
+          <div class="stat-value" id="excluded-count">0</div>
+          <div class="stat-percentage" id="excluded-percentage">0%</div>
+        </div>
+      </div>
+      
+      <div class="content-type-breakdown">
+        <h3>Content Type Breakdown (Non-Localized)</h3>
+        <div class="breakdown-grid">
+          <div class="breakdown-item">
+            <span class="breakdown-label">Proper Nouns:</span>
+            <span class="breakdown-value" id="proper-noun-breakdown">0</span>
+          </div>
+          <div class="breakdown-item">
+            <span class="breakdown-label">Common Nouns:</span>
+            <span class="breakdown-value" id="common-noun-breakdown">0</span>
+          </div>
+          <div class="breakdown-item">
+            <span class="breakdown-label">Regular Text:</span>
+            <span class="breakdown-value" id="regular-text-breakdown">0</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Findings Section -->
+    <section class="findings" id="findings-section" style="display: none;">
+      <div class="findings-header">
+        <h2>Findings</h2>
+        <div class="findings-controls">
+          <input type="text" id="search-input" class="search-input" placeholder="Search findings...">
+          <select id="filter-select" class="filter-select">
+            <option value="all">All</option>
+            <option value="non-localized">Non-Localized</option>
+            <option value="localized">Localized</option>
+            <option value="excluded">Excluded</option>
+          </select>
+          <select id="content-type-filter" class="filter-select">
+            <option value="all">All Types</option>
+            <option value="proper-noun">Proper Nouns</option>
+            <option value="common-noun">Common Nouns</option>
+            <option value="text">Regular Text</option>
+          </select>
+        </div>
+      </div>
+      
+      <div id="findings-list" class="findings-list">
+        <!-- Findings will be inserted here -->
+      </div>
+      
+      <div class="pagination" id="pagination">
+        <button id="prev-page" class="btn btn-sm" disabled>Previous</button>
+        <span id="page-info">Page 1 of 1</span>
+        <button id="next-page" class="btn btn-sm" disabled>Next</button>
+      </div>
+    </section>
+
+    <!-- Actions Footer -->
+    <footer class="footer">
+      <div class="button-group">
+        <button id="export-excel-btn" class="btn btn-success" disabled>
+          Export Excel
+        </button>
+        <button id="export-word-btn" class="btn btn-success" disabled>
+          Export Word
+        </button>
+        <button id="export-pdf-btn" class="btn btn-success" disabled>
+          Export PDF
+        </button>
+      </div>
+      <button id="settings-btn" class="btn btn-link">Settings</button>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay" style="display: none;">
+      <div class="spinner"></div>
+      <div class="loading-text">Analyzing page...</div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
+

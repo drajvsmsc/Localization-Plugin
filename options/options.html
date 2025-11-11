@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocalizationChecker Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>LocalizationChecker Settings</h1>
+      <p>Configure your localization testing preferences</p>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-button active" data-tab="general">General</button>
+      <button class="tab-button" data-tab="filtering">Noun Filtering</button>
+      <button class="tab-button" data-tab="exclusions">Exclusions</button>
+      <button class="tab-button" data-tab="about">About</button>
+    </div>
+
+    <div class="tab-content">
+      <!-- General Tab -->
+      <div id="general-tab" class="tab-pane active">
+        <h2>General Settings</h2>
+        
+        <div class="form-group">
+          <label for="default-region">Default Target Region</label>
+          <select id="default-region" class="form-control">
+            <option value="India">India</option>
+            <option value="France">France</option>
+            <option value="Spain">Spain</option>
+            <option value="Germany">Germany</option>
+            <option value="Japan">Japan</option>
+            <option value="China">China</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Brazil">Brazil</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="default-language">Default Target Language</label>
+          <select id="default-language" class="form-control">
+            <option value="Hindi">Hindi</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="detection-threshold">
+            Language Detection Sensitivity
+            <span class="threshold-value" id="threshold-display">85%</span>
+          </label>
+          <input 
+            type="range" 
+            id="detection-threshold" 
+            class="slider" 
+            min="50" 
+            max="99" 
+            value="85"
+          >
+          <div class="slider-labels">
+            <span>Less Strict (50%)</span>
+            <span>More Strict (99%)</span>
+          </div>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" id="auto-analyze">
+            Auto-analyze on page load
+          </label>
+          <p class="help-text">Automatically run analysis when a new page loads</p>
+        </div>
+      </div>
+
+      <!-- Noun Filtering Tab -->
+      <div id="filtering-tab" class="tab-pane">
+        <h2>Noun Filtering</h2>
+        
+        <div class="info-box">
+          <strong>About Noun Filtering:</strong>
+          <p>The extension can exclude certain types of nouns from localization checks to reduce false positives.</p>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" id="exclude-proper-nouns" checked disabled>
+            Exclude Proper Nouns (Always Active)
+          </label>
+          <p class="help-text">
+            Brand names, product names, person names, places<br>
+            Examples: "Google", "iPhone", "John Smith", "New York"
+          </p>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" id="exclude-common-nouns-settings">
+            Exclude Common Nouns
+          </label>
+          <p class="help-text">
+            General object names<br>
+            Examples: "computer", "table", "browser", "file"
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label>Filtering Mode</label>
+          <select id="filtering-mode" class="form-control">
+            <option value="strict">Strict - Only exclude clear proper nouns</option>
+            <option value="moderate">Moderate - Balanced approach (recommended)</option>
+            <option value="lenient">Lenient - Exclude more potential nouns</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Exclusions Tab -->
+      <div id="exclusions-tab" class="tab-pane">
+        <h2>Custom Exclusions</h2>
+        
+        <div class="info-box">
+          <strong>Custom Exclusion Rules:</strong>
+          <p>Add words or patterns that should be excluded from localization checks.</p>
+        </div>
+
+        <div class="form-group">
+          <label for="exclusion-words">
+            Exclusion Word List
+            <span class="help-text">One word per line</span>
+          </label>
+          <textarea 
+            id="exclusion-words" 
+            class="form-control" 
+            rows="6"
+            placeholder="Example:&#10;API&#10;SDK&#10;URL&#10;HTTP"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="exclusion-patterns">
+            Regular Expression Patterns
+            <span class="help-text">One pattern per line (advanced users)</span>
+          </label>
+          <textarea 
+            id="exclusion-patterns" 
+            class="form-control" 
+            rows="6"
+            placeholder="Example:&#10;v\d+\.\d+&#10;\d+GB&#10;\w+@\w+\.\w+"
+          ></textarea>
+        </div>
+
+        <div class="button-group">
+          <button id="test-patterns-btn" class="btn btn-secondary">Test Patterns</button>
+          <button id="import-exclusions-btn" class="btn btn-secondary">Import</button>
+          <button id="export-exclusions-btn" class="btn btn-secondary">Export</button>
+        </div>
+
+        <div id="pattern-test-results" class="test-results" style="display: none;"></div>
+      </div>
+
+      <!-- About Tab -->
+      <div id="about-tab" class="tab-pane">
+        <h2>About LocalizationChecker</h2>
+        
+        <div class="about-section">
+          <div class="logo">🌍</div>
+          <h3>LocalizationChecker v1.0.0</h3>
+          <p class="tagline">Automated localization testing for web applications</p>
+        </div>
+
+        <div class="info-box">
+          <h4>Features</h4>
+          <ul>
+            <li>✓ Automated English text detection</li>
+            <li>✓ Smart noun filtering (proper & common nouns)</li>
+            <li>✓ Multi-region language validation</li>
+            <li>✓ Comprehensive reporting</li>
+            <li>✓ Export to Excel, Word, and PDF</li>
+            <li>✓ 100% offline operation</li>
+          </ul>
+        </div>
+
+        <div class="info-box">
+          <h4>Supported Regions</h4>
+          <p>India • France • Spain • Germany • Japan • China • Mexico • Brazil</p>
+        </div>
+
+        <div class="info-box">
+          <h4>Dependencies</h4>
+          <ul class="dependency-list">
+            <li><strong>franc.js</strong> - Language detection (MIT License)</li>
+            <li><strong>compromise.js</strong> - POS tagging (MIT License)</li>
+            <li><strong>SheetJS</strong> - Excel export (Apache 2.0)</li>
+            <li><strong>Docx.js</strong> - Word export (MIT License)</li>
+            <li><strong>jsPDF</strong> - PDF export (MIT License)</li>
+          </ul>
+        </div>
+
+        <div class="about-footer">
+          <p>
+            <a href="#" id="documentation-link">Documentation</a> •
+            <a href="#" id="changelog-link">Changelog</a> •
+            <a href="#" id="github-link">GitHub</a>
+          </p>
+          <p class="copyright">© 2025 QA Automation Team</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <button id="reset-btn" class="btn btn-danger">Reset to Defaults</button>
+      <div class="button-group">
+        <button id="cancel-btn" class="btn btn-secondary">Cancel</button>
+        <button id="save-btn" class="btn btn-primary">Save Settings</button>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
+

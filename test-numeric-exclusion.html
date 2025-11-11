@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Numeric Exclusion Test Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .section {
+      margin: 30px 0;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f9f9f9;
+    }
+    h1 { color: #667eea; }
+    h2 { color: #764ba2; }
+    .expected { 
+      color: #28a745; 
+      font-style: italic;
+      font-size: 0.9em;
+    }
+    .price { font-size: 2em; font-weight: bold; color: #dc3545; }
+    .date { color: #6c757d; }
+  </style>
+</head>
+<body>
+  <h1>LocalizationChecker Test Page</h1>
+  <p>This page tests the numeric and special character exclusion feature.</p>
+  <p class="expected">Expected: This paragraph should be flagged as non-localized</p>
+
+  <div class="section">
+    <h2>Section 1: Numbers</h2>
+    <p>123</p>
+    <p class="expected">^ Should be excluded (pure number)</p>
+    
+    <p>100.50</p>
+    <p class="expected">^ Should be excluded (decimal)</p>
+    
+    <p>Version 2024</p>
+    <p class="expected">^ Should be flagged as non-localized (has text)</p>
+  </div>
+
+  <div class="section">
+    <h2>Section 2: Dates & Times</h2>
+    <p class="date">2024-11-04</p>
+    <p class="expected">^ Should be excluded (date format)</p>
+    
+    <p>10:30 AM</p>
+    <p class="expected">^ Should be excluded (time)</p>
+    
+    <p>Published on 2024-11-04</p>
+    <p class="expected">^ Should be flagged as non-localized (has text)</p>
+  </div>
+
+  <div class="section">
+    <h2>Section 3: Currency</h2>
+    <p class="price">$99.99</p>
+    <p class="expected">^ Should be excluded (currency)</p>
+    
+    <p>€50.00</p>
+    <p class="expected">^ Should be excluded (euro)</p>
+    
+    <p>Price: $100</p>
+    <p class="expected">^ Should be excluded (mixed but low alphabetic ratio)</p>
+  </div>
+
+  <div class="section">
+    <h2>Section 4: Percentages</h2>
+    <p>50%</p>
+    <p class="expected">^ Should be excluded (percentage)</p>
+    
+    <p>100%</p>
+    <p class="expected">^ Should be excluded (percentage)</p>
+    
+    <p>Success rate: 95%</p>
+    <p class="expected">^ Should be flagged as non-localized (has text)</p>
+  </div>
+
+  <div class="section">
+    <h2>Section 5: Version Numbers</h2>
+    <p>v2.0</p>
+    <p class="expected">^ Should be excluded (version)</p>
+    
+    <p>1.0.0</p>
+    <p class="expected">^ Should be excluded (semantic version)</p>
+    
+    <p>Version 1.0.0 released</p>
+    <p class="expected">^ Should be flagged as non-localized (has text)</p>
+  </div>
+
+  <div class="section">
+    <h2>Section 6: Special Characters</h2>
+    <p>→</p>
+    <p class="expected">^ Should be excluded (symbol only)</p>
+    
+    <p>©</p>
+    <p class="expected">^ Should be excluded (copyright symbol)</p>
+    
+    <p>...</p>
+    <p class="expected">^ Should be excluded (ellipsis)</p>
+    
+    <p>Click here →</p>
+    <p class="expected">^ Should be flagged as non-localized (has text)</p>
+  </div>
+
+  <div class="section">
+    <h2>Section 7: Technical Formats</h2>
+    <p>#FF5733</p>
+    <p class="expected">^ Should be excluded (hex color)</p>
+    
+    <p>100px</p>
+    <p class="expected">^ Should be excluded (CSS unit)</p>
+    
+    <p>256GB</p>
+    <p class="expected">^ Should be excluded (file size)</p>
+    
+    <p>Storage: 256GB</p>
+    <p class="expected">^ Should be flagged as non-localized (has text)</p>
+  </div>
+
+  <div class="section">
+    <h2>Section 8: Mixed Content</h2>
+    <p>Welcome to our store</p>
+    <p class="expected">^ Should be flagged as non-localized (English text)</p>
+    
+    <p>Add to cart</p>
+    <p class="expected">^ Should be flagged as non-localized (English text)</p>
+    
+    <p>Buy now for $50</p>
+    <p class="expected">^ Should be flagged as non-localized (more than 30% alphabetic)</p>
+  </div>
+
+  <div class="section">
+    <h2>Section 9: Edge Cases</h2>
+    <p>(123)</p>
+    <p class="expected">^ Should be excluded (number in parentheses)</p>
+    
+    <p>[5]</p>
+    <p class="expected">^ Should be excluded (number in brackets)</p>
+    
+    <p>Item [5]</p>
+    <p class="expected">^ Should be flagged as non-localized (has text)</p>
+  </div>
+
+  <div class="section">
+    <h2>Summary</h2>
+    <p><strong>How to test:</strong></p>
+    <ol>
+      <li>Load this page in your browser</li>
+      <li>Click the LocalizationChecker extension icon</li>
+      <li>Select a region (e.g., "India") and language (e.g., "Hindi")</li>
+      <li>Click "Analyze"</li>
+      <li>Review the results</li>
+    </ol>
+    <p><strong>Expected Results:</strong></p>
+    <ul>
+      <li>Pure numbers, dates, currency, etc. should be <span style="color: #ffc107;">⊘ Excluded</span></li>
+      <li>English text should be <span style="color: #dc3545;">✗ Non-Localized</span></li>
+      <li>The green hints should NOT appear in findings (they're metadata)</li>
+    </ul>
+  </div>
+
+</body>
+</html>
+
