@@ -15,9 +15,14 @@ class LocalizationAnalyzer {
     this.settings = {
       targetRegion: 'India',
       targetLanguage: 'Hindi',
-      excludeCommonNouns: false,
       detectionThreshold: 0.85,
-      customExclusions: []
+      customExclusions: [],
+      // Translation verification - ENABLED BY DEFAULT
+      enableVerification: true,
+      libretranslateUrl: 'http://localhost:5001',
+      verificationApiKey: '',
+      cacheTranslations: true,
+      verificationMode: 'all'
     };
   }
 
@@ -27,8 +32,30 @@ class LocalizationAnalyzer {
   async init() {
     try {
       const stored = await chrome.storage.local.get(['settings']);
+      console.log('Loaded settings from storage:', stored.settings);
       if (stored.settings) {
         this.settings = { ...this.settings, ...stored.settings };
+      }
+      
+      console.log('Current settings after merge:', this.settings);
+      console.log('enableVerification:', this.settings.enableVerification);
+      console.log('LibreTranslateAPI available:', typeof LibreTranslateAPI !== 'undefined');
+      
+      // Initialize LibreTranslate API if verification is enabled
+      if (this.settings.enableVerification && typeof LibreTranslateAPI !== 'undefined') {
+        const apiUrl = this.settings.libretranslateUrl || 'https://libretranslate.com';
+        const apiKey = this.settings.verificationApiKey || null;
+        this.translator = new LibreTranslateAPI(apiUrl, apiKey);
+        console.log('✓ Translation verification enabled:', apiUrl);
+      } else {
+        this.translator = null;
+        console.log('✗ Translation verification NOT enabled');
+        if (!this.settings.enableVerification) {
+          console.log('  Reason: enableVerification is false');
+        }
+        if (typeof LibreTranslateAPI === 'undefined') {
+          console.log('  Reason: LibreTranslateAPI not loaded');
+        }
       }
     } catch (error) {
       console.error('Error loading settings:', error);
@@ -352,7 +379,11 @@ class LocalizationAnalyzer {
     // Check if text is in target language FIRST (before numeric check)
     // This allows "R$304 por 2 noites" to be recognized as Portuguese
     if (this.isInTargetLanguage(trimmedText)) {
-      return { status: 'localized', reason: `Text is in target language (${this.settings.targetLanguage})` };
+      return { 
+        status: 'localized', 
+        reason: `Text is in target language (${this.settings.targetLanguage})`,
+        needsVerification: true // Mark for verification if enabled
+      };
     }
 
     // Check if text is primarily numeric or special characters
@@ -503,6 +534,7 @@ class LocalizationAnalyzer {
         contentType: classification.contentType || 'text',
         location: location,
         posAnalysis: classification.posAnalysis,
+        needsVerification: classification.needsVerification || false,
         timestamp: new Date().toISOString()
       };
 
@@ -524,6 +556,23 @@ class LocalizationAnalyzer {
 
     console.log('Analysis complete:', this.results);
     
+    // Verification step (if enabled)
+    console.log('Checking if verification should run...');
+    console.log('  - this.translator:', !!this.translator);
+    console.log('  - this.settings.enableVerification:', this.settings.enableVerification);
+    
+    if (this.translator && this.settings.enableVerification) {
+      console.log('🔄 Starting translation verification...');
+      try {
+        await this.verifyTranslations();
+        console.log('✅ Verification complete:', this.results);
+      } catch (error) {
+        console.error('❌ Verification error:', error);
+      }
+    } else {
+      console.log('⏭️  Skipping verification');
+    }
+    
     // Store results
     await chrome.storage.local.set({ 
       analysisResults: this.results,
@@ -533,6 +582,137 @@ class LocalizationAnalyzer {
 
     return this.results;
   }
+
+  /**
+   * Verify translations using LibreTranslate API
+   */
+  async verifyTranslations() {
+    // Get items that need verification
+    let itemsToVerify = this.results.findings.filter(f => f.needsVerification && f.status === 'localized');
+    
+    // Sample mode: only verify a percentage
+    if (this.settings.verificationMode === 'sample') {
+      const sampleSize = Math.ceil(itemsToVerify.length * 0.2); // 20%
+      itemsToVerify = this.sampleRandomItems(itemsToVerify, sampleSize);
+      console.log(`Sample mode: Verifying ${itemsToVerify.length} of ${this.results.findings.filter(f => f.needsVerification).length} items`);
+    }
+    
+    if (itemsToVerify.length === 0) {
+      console.log('No items to verify');
+      return;
+    }
+    
+    const targetLangCode = this.translator.getLibreTranslateCode(this.settings.targetLanguage);
+    let verifiedCount = 0;
+    let correctCount = 0;
+    let incorrectCount = 0;
+    
+    // Initialize new counts
+    this.results.correctlyTranslatedCount = 0;
+    this.results.incorrectlyTranslatedCount = 0;
+    
+    for (const finding of itemsToVerify) {
+      try {
+        // Translate from English to target language
+        const expectedTranslation = await this.translator.translate(
+          finding.fullText,
+          'en',
+          targetLangCode
+        );
+        
+        verifiedCount++;
+        
+        // Compare with actual text
+        const similarity = this.calculateSimilarity(finding.fullText, expectedTranslation);
+        
+        if (similarity > 0.8) { // 80% similar
+          finding.status = 'correctly-translated';
+          finding.reason = `Verified: Matches expected translation`;
+          finding.expectedTranslation = expectedTranslation;
+          finding.similarity = similarity;
+          correctCount++;
+          this.results.correctlyTranslatedCount++;
+          this.results.localizedCount--; // Remove from localized count
+        } else {
+          finding.status = 'incorrectly-translated';
+          finding.reason = `Incorrect translation (Expected: "${expectedTranslation}")`;
+          finding.expectedTranslation = expectedTranslation;
+          finding.similarity = similarity;
+          incorrectCount++;
+          this.results.incorrectlyTranslatedCount++;
+          this.results.localizedCount--; // Remove from localized count
+        }
+        
+        // Small delay to avoid rate limiting
+        await this.sleep(100);
+        
+      } catch (error) {
+        console.error(`Verification error for "${finding.text}":`, error);
+        finding.verificationError = error.message;
+      }
+    }
+    
+    console.log(`Verification complete: ${correctCount} correct, ${incorrectCount} incorrect out of ${verifiedCount} verified`);
+  }
+
+  /**
+   * Sample random items from array
+   */
+  sampleRandomItems(array, sampleSize) {
+    const shuffled = array.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, sampleSize);
+  }
+
+  /**
+   * Calculate similarity between two strings
+   */
+  calculateSimilarity(str1, str2) {
+    const longer = str1.length > str2.length ? str1 : str2;
+    const shorter = str1.length > str2.length ? str2 : str1;
+    
+    if (longer.length === 0) return 1.0;
+    
+    const editDistance = this.levenshteinDistance(longer, shorter);
+    return (longer.length - editDistance) / longer.length;
+  }
+
+  /**
+   * Calculate Levenshtein distance between two strings
+   */
+  levenshteinDistance(str1, str2) {
+    const matrix = [];
+    
+    for (let i = 0; i <= str2.length; i++) {
+      matrix[i] = [i];
+    }
+    
+    for (let j = 0; j <= str1.length; j++) {
+      matrix[0][j] = j;
+    }
+    
+    for (let i = 1; i <= str2.length; i++) {
+      for (let j = 1; j <= str1.length; j++) {
+        if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
+          matrix[i][j] = matrix[i - 1][j - 1];
+        } else {
+          matrix[i][j] = Math.min(
+            matrix[i - 1][j - 1] + 1,
+            matrix[i][j - 1] + 1,
+            matrix[i - 1][j] + 1
+          );
+        }
+      }
+    }
+    
+    return matrix[str2.length][str1.length];
+  }
+
+  /**
+   * Sleep helper
+   */
+  sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 }
 
 // Create global instance
@@ -541,10 +721,15 @@ const analyzer = new LocalizationAnalyzer();
 // Listen for messages from popup
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'analyze') {
-    analyzer.settings = { ...analyzer.settings, ...request.settings };
-    analyzer.analyze().then(results => {
+    // Initialize analyzer first to load settings and setup translator
+    analyzer.init().then(() => {
+      // Override with any settings passed from popup
+      analyzer.settings = { ...analyzer.settings, ...request.settings };
+      return analyzer.analyze();
+    }).then(results => {
       sendResponse({ success: true, results });
     }).catch(error => {
+      console.error('Analysis error:', error);
       sendResponse({ success: false, error: error.message });
     });
     return true; // Keep channel open for async response

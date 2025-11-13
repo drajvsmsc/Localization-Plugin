@@ -53,13 +53,18 @@ function getDefaultSettings() {
   return {
     targetRegion: 'India',
     targetLanguage: 'Hindi',
-    excludeCommonNouns: false,
     detectionThreshold: 0.85,
     customExclusions: [],
     autoAnalyze: false,
     filteringMode: 'moderate',
     exclusionWords: [],
-    exclusionPatterns: []
+    exclusionPatterns: [],
+    // Translation verification settings - ENABLED BY DEFAULT
+    enableVerification: true,
+    libretranslateUrl: 'http://localhost:5001',
+    verificationApiKey: '',
+    cacheTranslations: true,
+    verificationMode: 'all'  // Full mode by default
   };
 }
 
@@ -79,7 +84,6 @@ function applySettingsToUI() {
   document.getElementById('auto-analyze').checked = currentSettings.autoAnalyze || false;
   
   // Filtering tab
-  document.getElementById('exclude-common-nouns-settings').checked = currentSettings.excludeCommonNouns || false;
   document.getElementById('filtering-mode').value = currentSettings.filteringMode || 'moderate';
   
   // Exclusions tab
@@ -88,6 +92,16 @@ function applySettingsToUI() {
   
   const exclusionPatterns = currentSettings.exclusionPatterns || [];
   document.getElementById('exclusion-patterns').value = exclusionPatterns.join('\n');
+  
+  // Translation Verification tab
+  document.getElementById('enable-verification').checked = currentSettings.enableVerification !== false; // Default true
+  document.getElementById('libretranslate-url').value = currentSettings.libretranslateUrl || 'http://localhost:5001';
+  document.getElementById('verification-api-key').value = currentSettings.verificationApiKey || '';
+  document.getElementById('cache-translations').checked = currentSettings.cacheTranslations !== false; // Default true
+  document.getElementById('verification-mode').value = currentSettings.verificationMode || 'all'; // Default full mode
+  
+  // Toggle verification settings panel visibility
+  toggleVerificationSettings();
 }
 
 /**
@@ -135,6 +149,10 @@ function attachEventListeners() {
   // Import/Export exclusions
   document.getElementById('import-exclusions-btn').addEventListener('click', importExclusions);
   document.getElementById('export-exclusions-btn').addEventListener('click', exportExclusions);
+  
+  // Translation Verification
+  document.getElementById('enable-verification').addEventListener('change', toggleVerificationSettings);
+  document.getElementById('test-verification').addEventListener('click', testVerificationConnection);
   
   // Save/Cancel/Reset buttons
   document.getElementById('save-btn').addEventListener('click', saveSettings);
@@ -294,7 +312,6 @@ async function saveSettings() {
       targetLanguage: document.getElementById('default-language').value,
       detectionThreshold: parseInt(document.getElementById('detection-threshold').value) / 100,
       autoAnalyze: document.getElementById('auto-analyze').checked,
-      excludeCommonNouns: document.getElementById('exclude-common-nouns-settings').checked,
       filteringMode: document.getElementById('filtering-mode').value,
       exclusionWords: document.getElementById('exclusion-words').value
         .split('\n')
@@ -304,7 +321,13 @@ async function saveSettings() {
         .split('\n')
         .map(p => p.trim())
         .filter(p => p),
-      customExclusions: [] // Combined for backward compatibility
+      customExclusions: [], // Combined for backward compatibility
+      // Translation Verification settings
+      enableVerification: document.getElementById('enable-verification').checked,
+      libretranslateUrl: document.getElementById('libretranslate-url').value,
+      verificationApiKey: document.getElementById('verification-api-key').value,
+      cacheTranslations: document.getElementById('cache-translations').checked,
+      verificationMode: document.getElementById('verification-mode').value
     };
     
     // Combine words and patterns into customExclusions
@@ -350,6 +373,55 @@ async function resetSettings() {
     applySettingsToUI();
     await saveSettings();
     showToast('Settings reset to defaults');
+  }
+}
+
+/**
+ * Toggle verification settings visibility
+ */
+function toggleVerificationSettings() {
+  const checkbox = document.getElementById('enable-verification');
+  const settingsPanel = document.getElementById('verification-settings');
+  
+  // Always show settings panel (since verification is enabled by default)
+  // Users can configure even when unchecked
+  settingsPanel.style.display = 'block';
+}
+
+/**
+ * Test verification connection
+ */
+async function testVerificationConnection() {
+  const button = document.getElementById('test-verification');
+  const status = document.getElementById('verification-status');
+  const apiUrl = document.getElementById('libretranslate-url').value;
+  const apiKey = document.getElementById('verification-api-key').value || null;
+  
+  button.disabled = true;
+  button.textContent = 'Testing...';
+  status.textContent = 'Testing connection...';
+  status.style.color = '#6c757d';
+  
+  try {
+    const api = new LibreTranslateAPI(apiUrl, apiKey);
+    const result = await api.testConnection();
+    
+    if (result.success) {
+      status.textContent = `✓ Connected (Test: "Hello" → "${result.testTranslation}")`;
+      status.style.color = '#28a745';
+      showToast('Connection successful!', 'success');
+    } else {
+      status.textContent = `✗ Failed: ${result.message}`;
+      status.style.color = '#dc3545';
+      showToast(result.message, 'error');
+    }
+  } catch (error) {
+    status.textContent = `✗ Error: ${error.message}`;
+    status.style.color = '#dc3545';
+    showToast(`Connection failed: ${error.message}`, 'error');
+  } finally {
+    button.disabled = false;
+    button.textContent = 'Test Connection';
   }
 }
 

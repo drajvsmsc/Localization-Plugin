@@ -1,22 +1,15 @@
 # Dependencies
-node_modules/
-package-lock.json
+
 
 # Build outputs
 dist/
 build/
 
 # Downloaded libraries (download fresh from CDN)
-libs/franc.min.js
-libs/compromise.min.js
-libs/xlsx.full.min.js
-libs/jspdf.min.js
+
 
 # Generated icons (generate from SVG)
-icons/icon-16.png
-icons/icon-48.png
-icons/icon-128.png
-*.png.placeholder
+
 
 # Extension packages
 *.zip

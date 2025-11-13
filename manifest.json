@@ -39,7 +39,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["libs/franc.min.js", "libs/compromise.min.js", "content-script.js"],
+      "js": ["libs/franc.min.js", "libs/compromise.min.js", "libs/libretranslate.js", "content-script.js"],
       "run_at": "document_idle"
     }
   ],

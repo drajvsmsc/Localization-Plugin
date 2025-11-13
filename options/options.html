@@ -16,6 +16,7 @@
     <div class="tabs">
       <button class="tab-button active" data-tab="general">General</button>
       <button class="tab-button" data-tab="filtering">Noun Filtering</button>
+      <button class="tab-button" data-tab="verification">Translation Verification</button>
       <button class="tab-button" data-tab="exclusions">Exclusions</button>
       <button class="tab-button" data-tab="about">About</button>
     </div>
@@ -94,16 +95,6 @@
           </p>
         </div>
 
-        <div class="form-group checkbox-group">
-          <label>
-            <input type="checkbox" id="exclude-common-nouns-settings">
-            Exclude Common Nouns
-          </label>
-          <p class="help-text">
-            General object names<br>
-            Examples: "computer", "table", "browser", "file"
-          </p>
-        </div>
 
         <div class="form-group">
           <label>Filtering Mode</label>
@@ -112,6 +103,88 @@
             <option value="moderate">Moderate - Balanced approach (recommended)</option>
             <option value="lenient">Lenient - Exclude more potential nouns</option>
           </select>
+        </div>
+      </div>
+
+      <!-- Translation Verification Tab -->
+      <div id="verification-tab" class="tab-pane">
+        <h2>Translation Verification</h2>
+        
+        <div class="info-box">
+          <strong>ℹ️ About Translation Verification:</strong>
+          <p>Translation verification is <strong>enabled by default</strong> using LibreTranslate at <code>http://localhost:5001</code> in full verification mode.</p>
+          <p><strong>Example:</strong> If a page shows "Casa" for "Home", but the correct translation should be "Início", it will be flagged as incorrectly translated.</p>
+          <p class="help-text">💡 Make sure LibreTranslate is running locally on port 5001, or change the URL below.</p>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" id="enable-verification" checked>
+            <strong>Enable Translation Verification</strong>
+          </label>
+          <p class="help-text">Enabled by default - uncheck to disable translation verification</p>
+        </div>
+
+        <div id="verification-settings">
+          <div class="form-group">
+            <label for="libretranslate-url">LibreTranslate API URL</label>
+            <input 
+              type="text" 
+              id="libretranslate-url" 
+              class="form-control" 
+              value="http://localhost:5001"
+              placeholder="http://localhost:5001"
+            >
+            <p class="help-text">
+              Default: <code>http://localhost:5001</code> (Local instance)<br>
+              Change this if your LibreTranslate server is on a different port or server
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label for="verification-api-key">API Key (Optional)</label>
+            <input 
+              type="text" 
+              id="verification-api-key" 
+              class="form-control" 
+              placeholder="Leave empty for free tier"
+            >
+            <p class="help-text">
+              Optional: Get an API key from <a href="https://libretranslate.com" target="_blank">libretranslate.com</a> for higher limits
+            </p>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label>
+              <input type="checkbox" id="cache-translations" checked>
+              Cache translations
+            </label>
+            <p class="help-text">Reduces API calls by caching translation results locally</p>
+          </div>
+
+          <div class="form-group">
+            <label>Verification Mode</label>
+            <select id="verification-mode" class="form-control">
+              <option value="sample">Sample Mode - Verify random 20% (faster, less API calls)</option>
+              <option value="all" selected>Full Mode - Verify all items (slower, more accurate)</option>
+            </select>
+            <p class="help-text">Full mode is enabled by default for thorough verification</p>
+          </div>
+
+          <div class="status-box">
+            <strong>Status:</strong> <span id="verification-status">Not configured</span>
+            <button id="test-verification" class="btn-secondary">Test Connection</button>
+          </div>
+
+          <div class="info-box warning-box">
+            <strong>⚠️ Rate Limits:</strong>
+            <p>The free LibreTranslate API has rate limits. If you exceed them:</p>
+            <ul>
+              <li>Use "Sample Mode" to verify fewer items</li>
+              <li>Get a free API key for higher limits</li>
+              <li>Self-host LibreTranslate for unlimited usage</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -219,6 +292,7 @@
     <div id="toast" class="toast"></div>
   </div>
 
+  <script src="../libs/libretranslate.js"></script>
   <script src="options.js"></script>
 </body>
 </html>

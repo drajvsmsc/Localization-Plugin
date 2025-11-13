@@ -71,6 +71,8 @@ export function formatStatus(status) {
  */
 export function getStatusIcon(status) {
   const icons = {
+    'correctly-translated': '✓✓',
+    'incorrectly-translated': '⚠️',
     'localized': '✓',
     'non-localized': '✗',
     'excluded': '⊘'
@@ -83,6 +85,8 @@ export function getStatusIcon(status) {
  */
 export function getStatusColor(status) {
   const colors = {
+    'correctly-translated': '#17a2b8',
+    'incorrectly-translated': '#ff9800',
     'localized': '#28a745',
     'non-localized': '#dc3545',
     'excluded': '#ffc107'

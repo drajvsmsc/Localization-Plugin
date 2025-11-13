@@ -55,7 +55,6 @@ function applySettings() {
   document.getElementById('region-select').value = currentSettings.targetRegion || 'India';
   updateLanguageOptions();
   document.getElementById('language-select').value = currentSettings.targetLanguage || 'Hindi';
-  document.getElementById('exclude-common-nouns').checked = currentSettings.excludeCommonNouns || false;
 }
 
 /**
@@ -158,7 +157,6 @@ async function runAnalysis() {
     const settings = {
       targetRegion: document.getElementById('region-select').value,
       targetLanguage: document.getElementById('language-select').value,
-      excludeCommonNouns: document.getElementById('exclude-common-nouns').checked,
       customExclusions: currentSettings.customExclusions || []
     };
     
@@ -203,6 +201,22 @@ function displayResults(results) {
   document.getElementById('localized-count').textContent = results.localizedCount;
   document.getElementById('non-localized-count').textContent = results.nonLocalizedCount;
   document.getElementById('excluded-count').textContent = results.excludedCount || 0;
+  
+  // Show/hide verification stats if present
+  if (results.correctlyTranslatedCount > 0 || results.incorrectlyTranslatedCount > 0) {
+    document.getElementById('correctly-translated-card').style.display = 'block';
+    document.getElementById('incorrectly-translated-card').style.display = 'block';
+    document.getElementById('correctly-translated-count').textContent = results.correctlyTranslatedCount || 0;
+    document.getElementById('incorrectly-translated-count').textContent = results.incorrectlyTranslatedCount || 0;
+    
+    const correctlyPct = Math.round(((results.correctlyTranslatedCount || 0) / (results.totalElements || 1)) * 100);
+    const incorrectlyPct = Math.round(((results.incorrectlyTranslatedCount || 0) / (results.totalElements || 1)) * 100);
+    document.getElementById('correctly-translated-percentage').textContent = `${correctlyPct}%`;
+    document.getElementById('incorrectly-translated-percentage').textContent = `${incorrectlyPct}%`;
+  } else {
+    document.getElementById('correctly-translated-card').style.display = 'none';
+    document.getElementById('incorrectly-translated-card').style.display = 'none';
+  }
   
   // Calculate percentages
   const total = results.totalElements || 1;
@@ -305,6 +319,8 @@ function createFindingElement(finding) {
   div.className = `finding-item ${finding.status}`;
   
   const statusIcon = {
+    'correctly-translated': '✓✓',
+    'incorrectly-translated': '⚠️',
     'localized': '✓',
     'non-localized': '✗',
     'excluded': '⊘'
@@ -316,9 +332,15 @@ function createFindingElement(finding) {
     'text': ''
   }[finding.contentType || 'text'] || '';
   
+  // Show expected translation if available
+  const expectedInfo = finding.expectedTranslation 
+    ? `<div class="verification-info">Expected: "${escapeHtml(finding.expectedTranslation)}" (${Math.round((finding.similarity || 0) * 100)}% match)</div>`
+    : '';
+  
   div.innerHTML = `
     <div class="finding-status">${statusIcon} ${formatStatus(finding.status)} ${contentTypeBadge}</div>
     <div class="finding-text">"${escapeHtml(finding.text)}"</div>
+    ${expectedInfo}
     <div class="finding-meta">
       <span>📍 ${finding.location.section}</span>
       <span>🏷️ &lt;${finding.elementType}&gt;</span>

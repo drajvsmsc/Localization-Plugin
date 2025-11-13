@@ -6,12 +6,11 @@
 // Initialize default settings on install
 chrome.runtime.onInstalled.addListener(async (details) => {
   if (details.reason === 'install') {
-    const defaultSettings = {
-      targetRegion: 'India',
-      targetLanguage: 'Hindi',
-      excludeCommonNouns: false,
-      detectionThreshold: 0.85,
-      customExclusions: [],
+  const defaultSettings = {
+    targetRegion: 'India',
+    targetLanguage: 'Hindi',
+    detectionThreshold: 0.85,
+    customExclusions: [],
       autoAnalyze: false
     };
     

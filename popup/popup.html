@@ -37,12 +37,6 @@
         </select>
       </div>
 
-      <div class="form-group checkbox-group">
-        <label>
-          <input type="checkbox" id="exclude-common-nouns">
-          Exclude Common Nouns
-        </label>
-      </div>
 
       <div class="button-group">
         <button id="analyze-btn" class="btn btn-primary">Analyze</button>
@@ -57,6 +51,16 @@
         <div class="stat-card">
           <div class="stat-label">Total Elements</div>
           <div class="stat-value" id="total-elements">0</div>
+        </div>
+        <div class="stat-card stat-verified" id="correctly-translated-card" style="display: none;">
+          <div class="stat-label">✓✓ Correctly Translated</div>
+          <div class="stat-value" id="correctly-translated-count">0</div>
+          <div class="stat-percentage" id="correctly-translated-percentage">0%</div>
+        </div>
+        <div class="stat-card stat-incorrect" id="incorrectly-translated-card" style="display: none;">
+          <div class="stat-label">⚠️ Incorrectly Translated</div>
+          <div class="stat-value" id="incorrectly-translated-count">0</div>
+          <div class="stat-percentage" id="incorrectly-translated-percentage">0%</div>
         </div>
         <div class="stat-card stat-success">
           <div class="stat-label">✓ Localized</div>
@@ -102,7 +106,9 @@
           <input type="text" id="search-input" class="search-input" placeholder="Search findings...">
           <select id="filter-select" class="filter-select">
             <option value="all">All</option>
+            <option value="incorrectly-translated">Incorrectly Translated</option>
             <option value="non-localized">Non-Localized</option>
+            <option value="correctly-translated">Correctly Translated</option>
             <option value="localized">Localized</option>
             <option value="excluded">Excluded</option>
           </select>

@@ -199,6 +199,16 @@ body {
   border-left-color: #17a2b8;
 }
 
+.stat-verified {
+  border-left-color: #17a2b8;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
+}
+
+.stat-incorrect {
+  border-left-color: #ff9800;
+  background: linear-gradient(135deg, #f8f9fa 0%, #fff3e0 100%);
+}
+
 .stat-label {
   font-size: 12px;
   color: #6c757d;
@@ -337,6 +347,14 @@ body {
   border-left-color: #ffc107;
 }
 
+.finding-item.correctly-translated {
+  border-left-color: #17a2b8;
+}
+
+.finding-item.incorrectly-translated {
+  border-left-color: #ff9800;
+}
+
 .finding-status {
   font-weight: 600;
   margin-bottom: 4px;
@@ -372,6 +390,16 @@ body {
   color: #495057;
   line-height: 1.5;
   word-wrap: break-word;
+}
+
+.verification-info {
+  background: #f0f8ff;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #0066cc;
+  border-left: 3px solid #2196f3;
 }
 
 .finding-meta {
